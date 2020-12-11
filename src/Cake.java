@@ -49,6 +49,8 @@ public class Cake {
         }
 
         Cake  bake() {
+
+            // If there's some vanilla there must be some sugar else throw an error
             if(this.vanilla > 0 && this.sugar==0){
                 try {
                     throw new Exception("Please add sugar along with vanilla");
@@ -72,7 +74,12 @@ public class Cake {
     }
 
     public static void main(String[] args){
-//        Cake cake =  new  Cake.CakeBaker(2, 3, 4).addButter(5).addVanilla(3).bake();
+/*
+        Test required validation - If there's some vanilla there must be some sugar
+       Cake cake =  new  Cake.CakeBaker(2, 3, 4).addButter(5).addVanilla(3).bake();
+ */
+
+
         Cake cake =  (new  Cake.CakeBaker(2, 3, 4))
                 .addButter(5)
                 .bake();
