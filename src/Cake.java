@@ -50,7 +50,11 @@ public class Cake {
 
         Cake  bake() {
             if(this.vanilla > 0 && this.sugar==0){
-                throw new Exception("Please add sugar along with vanilla");
+                try {
+                    throw new Exception("Please add sugar along with vanilla");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             Cake cake = new Cake();
             cake.sugar = this.sugar;
@@ -65,5 +69,13 @@ public class Cake {
             return cake;
 
         }
+    }
+
+    public static void main(String[] args){
+//        Cake cake =  new  Cake.CakeBaker(2, 3, 4).addButter(5).addVanilla(3).bake();
+        Cake cake =  (new  Cake.CakeBaker(2, 3, 4))
+                .addButter(5)
+                .bake();
+        System.out.println(cake.butter);
     }
 }
