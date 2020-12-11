@@ -39,7 +39,7 @@ public class Cake {
             this.eggs = eggs;
             return this;
         }
-        CakeBaker addButter(int vanilla){
+        CakeBaker addVanilla(int vanilla){
             this.vanilla = vanilla;
             return this;
         }
@@ -47,7 +47,7 @@ public class Cake {
             this.cherry = cherry;
             return this;
         }
-d
+
         Cake  bake() {
             if(this.vanilla > 0 && this.sugar==0){
                 throw new Exception("Please add sugar along with vanilla");
